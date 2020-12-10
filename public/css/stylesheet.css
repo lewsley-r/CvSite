@@ -1,7 +1,21 @@
 body {
   font-family: Arial;
   padding: 20px;
-  background: #000000;
+  
+}
+.title-image{
+  background-color: black;
+  border-radius: 20px;
+}
+
+.body2{
+  background-color: black;
+  color: aliceblue;
+}
+
+.body3{
+  background-color: rgb(11, 206, 255);
+  width:50%;
 }
 
 /* Header/Blog Title */
@@ -12,8 +26,19 @@ body {
   background: rgb(0, 0, 0);
   color: aliceblue;
 }
+
+.label {
+  font-weight: bolder;
+}
 .Profile_photo{
   border-radius: 50%;
+}
+.text-area{
+  border-radius: 40px;
+}
+
+.content{
+  height: 2000px;
 }
 
 /* Create two unequal columns that floats next to each other */
@@ -33,19 +58,46 @@ body {
   padding-left: 20px;
 }
 
+.card-title{
+  font-size: xx-large;
+}
+
+a{
+  color: gold;
+}
+
+a:hover {
+  color: aliceblue;
+}
+
+.links {
+  list-style-type: none;
+}
+
 /* Fake image */
 .fakeimg {
   background-color: #aaa;
   width: 75%;
   padding: 20px;
+  border-radius: 40px;
 }
 
 /* Add a card effect for articles */
 .card {
-  background-color: rgb(0, 0, 0);
   padding: 20px;
   margin-top: 20px;
-  color: aliceblue;
+  width:90%;
+  border-radius: 40px;
+  background-color: #aaa;
+}
+
+.input {
+  left: 200px;
+  height: 40px;
+}
+
+.card-title {
+  text-align: center;
 }
 
 /* Clear floats after the columns */
@@ -60,6 +112,9 @@ body {
   padding: 20px;
   text-align: center;
   margin-top: 20px;
+  background-color: #aaa;
+  border-radius: 40px;
+  width: 67.5%;
 }
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */

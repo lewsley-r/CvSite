@@ -44,7 +44,13 @@ class ContactController extends Controller
             $message->to('ronanlewsley99@gmail.com');
         });
         
-        return back()->with('success', 'Thank you for your request, ill reply as soon as possible!');
+        return view('success', array(
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'subject' => $request->get('subject'),
+            'phone_number' => $request->get('phone_number'),
+            'user_message' => $request->get('message'),
+        ));
 
     }
 }

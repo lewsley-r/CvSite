@@ -3,8 +3,12 @@
  <!-- CSS Stylesheet -->
  <link rel="stylesheet" href="{{ URL::asset('css/stylesheet.css') }}">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tiny.cloud/1/nysryxf61cin9ccahvhi183yivlcmexslayu9e3kbzg6ubpt/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script>tinymce.init({ selector:'textarea' });</script>
+
 
 <div class="content">
    <div class="row">
@@ -21,12 +25,13 @@
            @endif
            
           <form method="post" action="contact-us">
-             {{csrf_field()}}
+          <ol>
+            {{csrf_field()}}
              <div class="row">
                <div class="col-md-12">
                  <div class="form-group">
-                   <label> Name </label>
-                   <input type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Name" name="name">
+                   <label class ='label'> Name </label><br></br>
+                   <input type="text" class ='input' class="form-control @error('name') is-invalid @enderror" placeholder="Name" name="name">
                    @error('name')
                        <span class="invalid-feedback" role="alert">
                            <strong>{{ $message }}</strong>
@@ -34,21 +39,23 @@
                    @enderror
                  </div>
                </div>
-             <div class="col-md-12">
+               <br></br>
+               <div class="col-md-12">
                <div class="form-group">
-                   <label> Email </label>
-                   <input type="text" class="form-control @error('email') is-invalid @enderror" placeholder="Email" name="email">
+                   <label class ='label'> Email </label><br></br>
+                   <input type="text" class ='input' class="form-control @error('email') is-invalid @enderror" placeholder="Email" name="email">
                    @error('email')
                        <span class="invalid-feedback" role="alert">
                            <strong>{{ $message }}</strong>
                        </span>
                    @enderror
                  </div>
-               </div>   
+               </div>  
+              <br></br> 
              <div class="col-md-12">
                 <div class="form-group">
-                   <label> Phone Number </label>
-                   <input type="text" class="form-control @error('phone_number') is-invalid @enderror" placeholder="Phone Number" name="phone_number">
+                   <label class ='label'> Phone Number </label><br></br>
+                   <input type="text" class ='input' class="form-control @error('phone_number') is-invalid @enderror" placeholder="Phone Number" name="phone_number">
                    @error('phone_number')
                        <span class="invalid-feedback" role="alert">
                            <strong>{{ $message }}</strong>
@@ -56,10 +63,11 @@
                    @enderror
                  </div>
                </div>
+              <br></br>
               <div class="col-md-12">
                  <div class="form-group">
-                   <label> Subject </label>
-                   <input type="text" class="form-control @error('subject') is-invalid @enderror" placeholder="Subject" name="subject">
+                   <label class ='label'> Subject </label><br></br>
+                   <input type="text" class ='input' class="form-control @error('subject') is-invalid @enderror" placeholder="Subject" name="subject">
                    @error('subject')
                        <span class="invalid-feedback" role="alert">
                            <strong>{{ $message }}</strong>
@@ -67,9 +75,10 @@
                    @enderror
                  </div>
                </div>
+              <br></br>
               <div class="col-md-12">
                 <div class="form-group">
-                   <label> Message </label>
+                   <label class ='label'> Message </label><br></br>
                    <textarea class="form-control textarea @error('message') is-invalid @enderror" placeholder="Message" name="message"></textarea>
                    @error('message')
                        <span class="invalid-feedback" role="alert">
@@ -84,6 +93,7 @@
                  <button type="submit" class="btn btn-primary btn-round">Send</button>
                </div>
              </div>
+           </ol>  
            </form>
          </div>
        </div>
