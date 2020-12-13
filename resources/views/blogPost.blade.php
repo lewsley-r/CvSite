@@ -13,13 +13,16 @@
         
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <a href="{{ url('/') }}" class="text-sm text-gray-700 underline">Home</a>
     </head>
     <body class="body2">
+        @if(!empty($successMsg))
+        <div class="alert alert-success"> {{ $successMsg }}</div>
+        @endif
         <div>
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
                     @else
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
 
@@ -37,28 +40,20 @@
     <div class="row">
         <div class="leftcolumn">
             <form method="post" action="blog-post">
+            @csrf
             <div class="card">
                 <h2>Blog Update</h2>
-                <textarea placeholder= "Enter Blog Post here...."></textarea>
+                <label class ='label'> Name </label><br></br>
+                <input type="text" class ='input' class="form-control @error('name') is-invalid @enderror" placeholder="post_name" name="post_name">
+                <textarea placeholder= "Enter Blog Post here...." placeholder="post_content" name="post_content"></textarea>
+                <div class="button1" class="update ml-auto mr-auto">
+                    <button type="submit" class="btn btn-primary btn-round">Post</button>
+                </div>
             </div>
-            <div class="card">
-            <h2>Blog feed</h2>
-            <div class="fakeimg" style="height:200px;">Image</div>
-            <p>Some text..</p>
+            </form>
         </div>
     </div>
     <div class="rightcolumn">
-        <div class="card">
-            <h2>About Me</h2>
-            <img class = "Profile_photo" width="200" src ="{{ URL::asset('images/me.jpg') }}"/>
-            <p class='bio'>Computer Science student at Ulster University. Currently a Junior developer at Flax and Teal. Source code for the site can be found in CvSite repo at my Github linked below.</p>
-        </div>
-        <div class="card">
-            <h3>Popular Post</h3>
-            <div class="fakeimg">Image</div><br>
-            <div class="fakeimg">Image</div><br>
-            <div class="fakeimg">Image</div>
-        </div>
         <div class="card">
             <h3>Profiles & Relevant Links</h3>
             <ul class = "links">
